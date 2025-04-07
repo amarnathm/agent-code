@@ -130,7 +130,8 @@ def response_with_search(query):
 #                   type='function')
 #tool_call is returned from LLM, messages is current messages to send to LLM
 def handle_tool(tool_call, messages):
-    fnName = tool_call.function.name #print(f"function_name: {fnName}")
+    fnName = tool_call.function.name 
+    print(f"function_name: {fnName}")
     function = tool_functions[fnName]
     arguments = json.loads(tool_call.function.arguments)
     result = function(**arguments) #The result after applying function
